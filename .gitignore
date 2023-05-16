@@ -1,0 +1,29 @@
+# Ignorar archivos generados
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignorar entornos virtuales
+venv/
+env/
+cleanFlask
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de respaldo
+*~
+
+# Ignorar archivos de caché y datos
+.cache/
+*.db
+
+# Ignorar archivos compilados
+*.pyc
+*.so
+*.o
