@@ -16,6 +16,12 @@ CREATE TABLE providers (
 );
 ```
 
+### Las pruebas unitarias y e2e se pueden ejecutar con el siguiente comando:
+
+```bash
+    python3 -m pytest
+```
+
 # Estructura de carpetas en una aplicación utilizando Clean Architecture
 
 Tiene como objetivo principal lograr una separación clara de responsabilidades y facilitar el mantenimiento y la evolución del código.
