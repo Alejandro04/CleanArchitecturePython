@@ -1,11 +1,37 @@
 from flask import Flask, jsonify, request
+import jwt
+
 from src.adapters.provider_repository_mysql import ProviderRepositoryMySQL
 from src.use_cases.provider_use_case import ProviderUseCase
 from src.domain.provider import Provider
+
+from src.core.adapters.user_repository_mysql import UserRepositoryMySQL
+from src.core.use_cases.user_use_case import UserUseCase
+from src.core.domain.user import User
    
 app = Flask(__name__)
+app = Flask(__name__)
+#app.config['SECRET_KEY'] = 'your-secret-key'  # Clave secreta para firmar y verificar tokens
+
 Provider_repository = ProviderRepositoryMySQL()
 Provider_usecase = ProviderUseCase(Provider_repository)
+User_repository = UserRepositoryMySQL()
+User_usecase = UserUseCase(User_repository)
+
+
+@app.route("/token", methods=["POST"])
+def create_token():
+    username = "jhon_doe"
+    password = "secreta"
+
+    #user = User_usecase.auth(username, password)
+    user = True
+
+    if user:
+        payload = {'username': username}
+        #token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
+        return {'token': token}
+    return "Usuario o contraseña inválida"
    
 @app.route("/providers", methods=["GET"])
 def get_all():

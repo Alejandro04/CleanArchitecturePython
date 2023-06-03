@@ -9,8 +9,8 @@ class ProviderRepositoryMySQL(ProviderRepository):
     def __init__(self):
         self.cnx = mysql.connector.connect(
             host="localhost",
-            user="",
-            password="",
+            user="root",
+            password="mysql",
             database="shipping",
         )
 
